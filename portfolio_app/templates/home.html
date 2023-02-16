@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+
+
+{% block content %}
+
+<section class="content-projects" id="projects">
+
+    {%for project in projects%}
+
+    <section class="projects">
+
+        <div class="projects-content">
+            <div class="row">
+                <img src="{{project.image.url}}" alt="{{project.title}}" class="card-img">
+
+                <h2>{{project.title}}</h2>
+                <p>{{project.description}}</p>
+                {%if project.url%}
+                <h3>Link:</h3>
+                <a href="{{project.url}}">{{project.url}}</a>
+                {% endif%}
+                <h3>Link github:</h3>
+                {%if project.url_github%}
+                <a href="{{project.url_github}}">{{project.url_github}}</a>
+                {% endif%}
+            </div>
+        </div>
+
+    </section>
+
+    {%endfor%}
+
+</section>
+
+{%endblock%}
